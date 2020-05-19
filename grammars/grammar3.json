@@ -1,0 +1,8 @@
+{
+	"terms": ["a", "b"],
+	"non_terms": ["S"],
+	"start_symbol": "S",
+	"productions": [["S", ["a", "S", "b", "S"]],
+					["S", ["b", "S", "a", "S"]],
+					["S", [":eps:"]]]
+}

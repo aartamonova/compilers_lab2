@@ -1,0 +1,9 @@
+{
+	"terms": ["i", "e", "t", "a", "b"],
+	"non_terms": ["S", "E"],
+	"start_symbol": "S",
+	"productions": [["S", ["i", "E", "t", "S"]],
+					["S", ["i", "E", "t", "S", "e", "S"]],
+					["S", ["a"]],
+					["E", ["b"]]]
+}

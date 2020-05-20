@@ -151,7 +151,7 @@ class Grammar:
         if not self._check_eps_productions():
             return
 
-        # Получение списка терминалов, стоящих в левой части продукций
+        # Получение списка нетерминалов, стоящих в левой части продукций
         # вида A->eps и удаление этих продукций
         eps_list = []
         for production in self.productions:
@@ -160,7 +160,7 @@ class Grammar:
                     eps_list.append(production[0])
                 del self.productions[self.productions.index(production)]
 
-        # Получение списка терминалов, стоящих в левой части продукций
+        # Получение списка нетерминалов, стоящих в левой части продукций
         # вида B->A, где каждый символ из А входит в eps_list
         check_list = []
         while eps_list != check_list:
@@ -171,7 +171,7 @@ class Grammar:
 
         new_productions = []
         for production in self.productions:
-            # Индексы терминалов из правой части этой продукции, которые есть в eps_list
+            # Индексы нетерминалов из правой части этой продукции, которые есть в eps_list
             delete_indexes = []
             for i, symbol in enumerate(production[1]):
                 if symbol in eps_list:
@@ -181,7 +181,7 @@ class Grammar:
                 if production not in new_productions:
                     new_productions.append(production)
 
-                # Комбинации, полученные путем всех возможных исключений терминалов
+                # Комбинации, полученные путем всех возможных исключений нетерминалов
                 # из списка eps_list
                 # Пример: из S->AaB следуют комбинации S->AaB, S->aB, S->Aa, S->a
                 combinations = []
